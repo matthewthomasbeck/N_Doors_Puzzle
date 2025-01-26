@@ -18,20 +18,55 @@
 
 ########## N DOORS FUNCTION ##########
 
-def n_doors_algorithm(n):
+def n_doors_algorithm(n): # function to implement the n doors algorithm
 
-    doors = [False] * n
+    ##### initialize variables #####
 
-    for i in range(n):
-        for j in range(i, n, i + 1):
-            doors[j] = not doors[j]
+    doors = [False] * n # create a list of n doors, all closed
 
-    open_doors = []
-    for i in range(n):
-        if doors[i]:
-            open_doors.append(i + 1)
+    ##### loop through each door #####
 
-    return open_doors
+    for i in range(n): # iterate through the doors and open them
+
+        doors[i] = not doors[i]
+
+    ##### loop through each 2nd door #####
+
+    for i in range(1, n, 2): # iterate through every 2nd door and open them
+
+        doors[i] = not doors[i]
+
+    ##### loop through each 3rd door #####
+
+    for i in range(2, n, 3): # iterate through every 3rd door and open them
+
+        doors[i] = not doors[i]
+
+    ##### loop through each 4th door #####
+
+    for i in range(3, n, 4): # iterate through every 4th door and open them
+
+        doors[i] = not doors[i]
+
+    ##### loop through each 5th door #####
+
+    for i in range(4, n, 5): # iterate through every 5th door and open them
+
+        doors[i] = not doors[i]
+
+    ##### loop through each 6th door #####
+
+    for i in range(5, n, 6): # iterate through every 6th door and open them
+
+        doors[i] = not doors[i]
+
+    ##### loop through each nth door #####
+
+    for i in range(n-1, n, n): # iterate through every nth door and open them
+
+        doors[i] = not doors[i]
+
+    return doors
 
 
 ########## RUN ALGORITHM ##########
