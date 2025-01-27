@@ -34,23 +34,23 @@ def n_doors_algorithm(n): # function to implement n doors algorithm
 
             for j in range(round, n + 1, round): # j starts from round and then goes in steps
 
-                doors[j - 1] = not doors[j - 1] # roggel door at position j - 1
+                doors[j - 1] = not doors[j - 1] # toggle door at position j - 1
 
                 print(f"i: {round}; j: {j}; step size: {round}. Toggling door number {j}.") # print step
 
-        print("Algorithm has finished.\n") # algorithm termination statement
+    print("Algorithm has finished.\n") # algorithm termination statement
 
-        ##### print each door #####
+    ##### print each door #####
 
-        for i in range(n): # loop through all doors this time
+    for i in range(n): # loop through all doors this time
 
-            if doors[i]: # if a door is true...
+        if doors[i]: # if a door is true...
 
-                print(f"Door number {i + 1} remains open.") # print that the door is open
+            print(f"Door number {i + 1} remains open.") # print that the door is open
 
-            else: # if a door is false...
+        else: # if a door is false...
 
-                print(f"Door number {i + 1} remains closed.") # print that the door is closed
+            print(f"Door number {i + 1} remains closed.") # print that the door is closed
 
 
 ########## RUN ALGORITHM ##########
