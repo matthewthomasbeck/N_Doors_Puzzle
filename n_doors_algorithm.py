@@ -28,15 +28,35 @@ def n_doors_algorithm(n): # function to implement n doors algorithm
 
     for round in range(1, n + 1): # loop through each round
 
+        ##### adjust each door #####
+
+        for i in range(round - 1, n, round): # toggle every round door starting from round - 1 index
+
+            if n % i == 0:
+
+                doors[i] = not doors[i] # toggle door
+
+                print(f"i: {i}; j: PLACEHOLDER; step size: {n % i}. Toggling door number {i}.")
+
+        ##### print each door #####
+
         for i in range(round - 1, n, round): # toggle every round door starting from round - 1 index
 
             doors[i] = not doors[i] # toggle door
 
-    return doors # return list of doors
+            if doors[i] == True:
+
+                print(f"Door number {i + 1} remains open.")
+
+            else:
+
+                print(f"Door number {i + 1} remains closed.")
 
 
 ########## RUN ALGORITHM ##########
 
-##### call n doors function to run the algorithm #####
+##### run algorithm #####
 
-print(n_doors_algorithm(100)) # can work with any n doors
+n = int(input("Enter the number of Doors (N): ")) # ask user for number of doors
+
+print(n_doors_algorithm(n)) # run n doors algorithm
