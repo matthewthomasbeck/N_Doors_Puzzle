@@ -26,31 +26,23 @@ def n_doors_algorithm(n): # function to implement n doors algorithm
 
     ##### loop through however many n times #####
 
-    for round in range(1, n + 1): # loop through each round
+    for i in range(1, n + 1): # toggle every round door
 
-        ##### adjust each door #####
+        for j, door in enumerate(range(i - 1, n, i), start=1): # toggle every ith door
 
-        for i in range(1, n + 1): # toggle every round door
+            doors[door] = not doors[door] # toggle door
 
-            for j in range(round, n + 1, round): # j starts from round and then goes in steps
-
-                doors[j - 1] = not doors[j - 1] # toggle door at position j - 1
-
-                print(f"i: {round}; j: {j}; step size: {round}. Toggling door number {j}.") # print step
+            print(f"i: {i}; j:{door + 1}; step size: {i}. Toggling door number {door + 1}.") # print door toggling
 
     print("Algorithm has finished.\n") # algorithm termination statement
 
     ##### print each door #####
 
-    for i in range(n): # loop through all doors this time
+    for i, door in enumerate(doors, start=1): # print each door using enumerate starting at 1
 
-        if doors[i]: # if a door is true...
+        state = "open" if door else "closed" # determine door state
 
-            print(f"Door number {i + 1} remains open.") # print that the door is open
-
-        else: # if a door is false...
-
-            print(f"Door number {i + 1} remains closed.") # print that the door is closed
+        print(f"Door number {i} remains {state}.") # print door state
 
 
 ########## RUN ALGORITHM ##########
