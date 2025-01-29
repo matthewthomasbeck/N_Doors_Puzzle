@@ -57,4 +57,4 @@ def n_doors_algorithm(n): # function to implement n doors algorithm
 
 n = int(input("Enter the number of Doors (N): ")) # ask user for number of doors
 
-print(n_doors_algorithm(n)) # run n doors algorithm
+n_doors_algorithm(n) # run n doors algorithm
