@@ -38,11 +38,17 @@ def n_doors_algorithm(n): # function to implement n doors algorithm
 
     ##### print each door #####
 
-    for i, door in enumerate(doors, start=1): # print each door using enumerate starting at 1
+    for i, door in enumerate(doors, start=1): # loop through and print each open door
 
-        state = "open" if door else "closed" # determine door state
+        if door: # if door is true...
 
-        print(f"Door number {i} remains {state}.") # print door state
+            print(f"Door number {i} remains open.") # print open door
+
+    for i, door in enumerate(doors, start=1): # loop through and print each closed door
+
+        if not door: # if door is false...
+
+            print(f"Door number {i} remains closed.") # print closed door
 
 
 ########## RUN ALGORITHM ##########
