@@ -23,6 +23,7 @@ def n_doors_algorithm(n): # function to implement n doors algorithm
     ##### initialize variables #####
 
     doors = [False] * n # create a list of closed n doors
+    fizzbuzz_list = [] # create a list for fizz buzz implementation
 
     ##### loop through however many n times #####
 
@@ -49,6 +50,30 @@ def n_doors_algorithm(n): # function to implement n doors algorithm
         if not door: # if door is false...
 
             print(f"Door number {i} remains closed.") # print closed door
+
+    ##### calculate fizz buzz #####
+
+    for i, door in enumerate(doors, start=1): # loop through and implement fizz buzz
+
+        if door: # if door is true...
+
+            if i % 3 == 0 and i % 5 == 0: # if door is divisible by 3 and 5...
+
+                fizzbuzz_list.append("FizzBuzz") # append fizzbuzz
+
+            elif i % 3 == 0: # if door is divisible by 3...
+
+                fizzbuzz_list.append("Fizz") # append fizz
+
+            elif i % 5 == 0: # if door is divisible by 5...
+
+                fizzbuzz_list.append("Buzz") # append buzz
+
+            else: # if door is not divisible by 3 or 5...
+
+                fizzbuzz_list.append(i) # append door number
+
+    print(f"N Doors Puzzle's Fizz Buzz Implementation: {fizzbuzz_list}")
 
 
 ########## RUN ALGORITHM ##########
